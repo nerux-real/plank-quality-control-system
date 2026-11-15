@@ -1,21 +1,24 @@
 #connect AI model + vision
-#Right now for test just manual input
+#Right now for test just random lemums
 import time
+import random
 from s7 import Client, util
 
 client = Client()
 i=1
+
+def get_random_verdict():
+    random_lemums = random.choices([1,2], weights=[0.9, 0.1])[0]
+    return random_lemums
+
 try:
     client.connect("127.0.0.1", 0, 1, tcp_port=1102)
     print("Savienojums ar PLC serveri izveidots.")
     while True:
-        user_input = input("Ievadiet dēļa rezultātu (1 vai 2), lai ierakstītu PLC atmiņā (vai 'exit' lai izietu): ") #laikus kmr nav ai model un vision pieslēgts
-        if user_input.lower() == 'exit':
-            break
-        if user_input not in ['1', '2']:
-            print("Nederīga ievade. Lūdzu, ievadiet 1 vai 2.")
-            continue
-        client.db_write(1, 0, int(user_input).to_bytes(2, byteorder='big')) #ierakstīt datus PLC atmiņā DB1, sākot no 0 baita
+        time.sleep(random.uniform(0.5, 3))
+        random_verdict = get_random_verdict()
+
+        client.db_write(1, 0, int(random_verdict).to_bytes(2, byteorder='big')) #ierakstīt datus PLC atmiņā DB1, sākot no 0 baita
         client.db_write(1, 2, int(i).to_bytes(2, byteorder='big'))
         client.db_write(1, 4, (1).to_bytes(1, byteorder='big'))
         print("Dati ierakstīti PLC atmiņā.")

@@ -1,10 +1,10 @@
 #Ļauj viegli nolasīt visus datu blokus (DB1, DB2) no PLC servera, izmantojot S7 protokolu.
 from s7 import Client, util
+import time
 
 client = Client()
-try:
-    client.connect("127.0.0.1", 0, 1, tcp_port=1102)
-    print("Savienojums ar PLC serveri izveidots.")
+
+def read_all_dbs():
     print("DB1 Data: ", client.db_read(1, 0, 5))
     print("DB2 Data: ", client.db_read(2, 0, 32))
     print("============================================")
@@ -29,6 +29,20 @@ try:
     count_rejected: {util.get_dint(data, 16)}
     fault_code: {util.get_int(data, 20)}""")
     print("============================================")
+
+try:
+    client.connect("127.0.0.1", 0, 1, tcp_port=1102)
+    print("Savienojums ar PLC serveri izveidots.")
+    user_input = input("Palaist ciklā? (1=jā, 2=nē): ")
+    if user_input == "1":
+        while True:
+            read_all_dbs()
+            time.sleep(0.5)
+    elif user_input == "2":
+        read_all_dbs()
+    else:
+        print("Nederīga izvēle. Lūdzu, ievadiet 1 vai 2.")
+
 except Exception as e:
     print(f"Kļūda savienojoties ar PLC serveri: {e}")
 except KeyboardInterrupt:
