@@ -18,6 +18,7 @@ try:
     db2_data=bytearray(db2_size) #datu baitu masīvs 32 baitu garumā
     server.register_area(SrvArea.DB, 2, db2_data) #reģistrē datu bloku DB2 ar 32 baitu lielu masīvu
 
+    db2_data[2:4] = (1).to_bytes(2, byteorder='big')
     server.start(tcp_port=server_port)
     print(f"PLC simulācijas serveris klausās portu: {server_port}.")
     while True:
