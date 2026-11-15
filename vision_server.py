@@ -1,6 +1,7 @@
 #connect AI model + vision
 #Right now for test just manual input
-from s7 import Client
+import time
+from s7 import Client, util
 
 client = Client()
 i=1
@@ -18,10 +19,19 @@ try:
         client.db_write(1, 2, int(i).to_bytes(2, byteorder='big'))
         client.db_write(1, 4, (1).to_bytes(1, byteorder='big'))
         print("Dati ierakstīti PLC atmiņā.")
-        result = client.db_read(1, 0, 2)
-        print("Nolasītie dati no PLC atmiņas - Rezultāts: ", result, "Verdict: ", "PASS" if result == b'\x00\x01' else "DROP")
-        print("Nolasītie dati no PLC atmiņas - Numurs: ", int.from_bytes(client.db_read(1, 2, 2), byteorder='big'))
-        print("Nolasītie dati no PLC atmiņas - Statuss: ", int.from_bytes(client.db_read(1, 4, 1), byteorder='big'))
+        start_time = time.time()
+        while True:
+            data = client.db_read(2, 0, 10)
+            time_taken = time.time() - start_time
+            if util.get_bool(data, 4, 0) and util.get_int(data, 8) == i:
+                print(f"PLC serveris ir apstiprinājis dēli nr. {i}.")
+                print(f"Laiks līdz apstiprinājumam: {time_taken:.2f} sekundes")
+                break
+            elif time_taken > 2:
+                print("PLC serveris neatbild.")
+                break
+            else:
+                time.sleep(0.05)
         i += 1
 except Exception as e:
     print(f"Kļūda savienojoties ar PLC serveri: {e}")
