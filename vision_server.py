@@ -4,21 +4,29 @@ import time
 import random
 from s7 import Client, util
 
+from ai_model import predict
+
 client = Client()
 i=1
 
-def get_random_verdict():
-    random_lemums = random.choices([1,2], weights=[0.9, 0.1])[0]
-    return random_lemums
+def get_random_photo():
+    import glob
+    import os
+    val_dataset = os.path.join(os.path.dirname(__file__), "dataset", "val")
+    good_photos = glob.glob(os.path.join(val_dataset, "good", "*.jpg"))
+    bad_photos = glob.glob(os.path.join(val_dataset, "bad", "*.jpg"))
+    return random.choice(good_photos + bad_photos)
 
 try:
     client.connect("127.0.0.1", 0, 1, tcp_port=1102)
     print("Savienojums ar PLC serveri izveidots.")
     while True:
         time.sleep(random.uniform(0.5, 3))
-        random_verdict = get_random_verdict()
+        random_bilde = get_random_photo()
+        print(f"Paņemta bilde: {random_bilde}")
+        verdict = predict(random_bilde)
 
-        client.db_write(1, 0, int(random_verdict).to_bytes(2, byteorder='big')) #ierakstīt datus PLC atmiņā DB1, sākot no 0 baita
+        client.db_write(1, 0, int(verdict).to_bytes(2, byteorder='big')) #ierakstīt datus PLC atmiņā DB1, sākot no 0 baita
         client.db_write(1, 2, int(i).to_bytes(2, byteorder='big'))
         client.db_write(1, 4, (1).to_bytes(1, byteorder='big'))
         print("Dati ierakstīti PLC atmiņā.")

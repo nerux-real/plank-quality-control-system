@@ -1,4 +1,7 @@
 # Programma, kura izveido PLC serveri, izmantojot klasisko S7 protokolu. Pieņem ienākošus savienojumus un ļauj klientiem lasīt un rakstīt datus PLC atmiņā.
+
+#todo launch window with camera turned on (ai vision) connect ai to it that will sent data to plc server, display result in camera window PASS/REJECT and answer from PLC.
+
 from s7 import Server, SrvArea, util
 import time
 

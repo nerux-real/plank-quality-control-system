@@ -1,0 +1,365 @@
+Te ir jau gatavie dati darbībai - Apmācīts AI modelis.
+
+AI modeļa apmācības logs:
+.\train_model.py
+['bad', 'good'] klases treniņu datu kopā
+56 attēli treniņu datu kopā
+13 attēli validācijas datu kopā
+7 partijas treniņu datu kopā
+2 partijas validācijas datu kopā
+torch.Size([8, 3, 320, 320]) attēlu partijas izmērs
+tensor([1, 1, 1, 1, 0, 0, 0, 0])
+torch.Size([8, 2]) izvades izmērs
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 1/20,
+
+    Zaudējums: 0.822,
+
+    Precizitāte: 69%,
+
+    Nepareizi klasificēti bojātie dēļi: 4
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 0.6923
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 2/20,
+
+    Zaudējums: 0.698,
+
+    Precizitāte: 85%,
+
+    Nepareizi klasificēti bojātie dēļi: 2
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 0.8462
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 3/20,
+
+    Zaudējums: 0.607,
+
+    Precizitāte: 92%,
+
+    Nepareizi klasificēti bojātie dēļi: 1
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 0.9231
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 4/20,
+
+    Zaudējums: 0.530,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 5/20,
+
+    Zaudējums: 0.499,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 6/20,
+
+    Zaudējums: 0.488,
+
+    Precizitāte: 92%,
+
+    Nepareizi klasificēti bojātie dēļi: 1
+
+============================
+
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 7/20,
+
+    Zaudējums: 0.461,
+
+    Precizitāte: 92%,
+
+    Nepareizi klasificēti bojātie dēļi: 1
+
+============================
+
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 8/20,
+
+    Zaudējums: 0.391,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 9/20,
+
+    Zaudējums: 0.310,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 10/20,
+
+    Zaudējums: 0.312,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 11/20,
+
+    Zaudējums: 0.418,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 12/20,
+
+    Zaudējums: 0.329,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 13/20,
+
+    Zaudējums: 0.331,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 14/20,
+
+    Zaudējums: 0.353,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 15/20,
+
+    Zaudējums: 0.301,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 16/20,
+
+    Zaudējums: 0.378,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 17/20,
+
+    Zaudējums: 0.342,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 18/20,
+
+    Zaudējums: 0.351,
+
+    Precizitāte: 92%,
+
+    Nepareizi klasificēti bojātie dēļi: 1
+
+============================
+
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 19/20,
+
+    Zaudējums: 0.313,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
+
+
+
+============================
+    Treniņa rezultāti:
+
+    Epohs 20/20,
+
+    Zaudējums: 0.323,
+
+    Precizitāte: 100%,
+
+    Nepareizi klasificēti bojātie dēļi: 0
+
+============================
+
+
+Labākais modelis saglabāts ar precizitāti: 1.0000
