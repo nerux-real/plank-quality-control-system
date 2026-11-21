@@ -1,0 +1,5 @@
+opencv_python==5.1.0.95
+Pillow==13.0.0
+python_snap7==3.5.0
+torch==2.15.0
+torchvision==0.29.2
