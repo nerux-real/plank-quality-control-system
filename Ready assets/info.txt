@@ -1,5 +1,8 @@
 Te ir jau gatavie dati darbībai - Apmācīts AI modelis.
 
+Kā instalēt? - Pārvietot dataset un plank_model.pth uz skripta root mapi (1 mapi atpakaļ ../ )
+
+
 AI modeļa apmācības logs:
 .\train_model.py
 ['bad', 'good'] klases treniņu datu kopā

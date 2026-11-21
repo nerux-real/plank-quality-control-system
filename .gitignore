@@ -1,1 +1,13 @@
 /dataset/
+/plank_model.pth
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Editor
+.vscode/
